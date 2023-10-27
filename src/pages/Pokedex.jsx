@@ -71,7 +71,7 @@ const Pokedex = () => {
         </p>
         <form onSubmit={handleSubmit} className="sm:flex sm:items-center">
           <div className="pb-3 xsm:pb-4">
-            <input placeholder="Your name..." className="px-2 h-[40px] w-[65%] max-w-[240px] outline-none" style={{boxShadow: "0px 3px 6px 0px rgba(0, 0, 0, 0.15)"}} name="pokemonName" type="text" autoComplete="off" />
+            <input placeholder="Pokemon's name..." className="px-2 h-[40px] w-[65%] max-w-[240px] outline-none" style={{boxShadow: "0px 3px 6px 0px rgba(0, 0, 0, 0.15)"}} name="pokemonName" type="text" autoComplete="off" />
             <button className="bg-[#D93F3F] text-white px-4 py-2 xsm:px-6">Search</button>
           </div>
           <select onChange={handleChangeType} className="capitalize hover:cursor-pointer outline-none h-[40px] mb-4 xsm:mb-6 font-[Roboto] font-medium text-[#070714] bg-white pl-2 pr-7" style={{boxShadow: "0px 3px 6px 0px rgba(0, 0, 0, 0.15)"}}>
