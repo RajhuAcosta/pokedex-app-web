@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 import PokemonList from "../components/pokedex/PokemonList";
 import HeaderPokeball from "../components/layouts/HeaderPokeball";
 import { paginateData } from "../utils/pagination";
+import { Link } from "react-scroll";
 
 const Pokedex = () => {
   const trainerName = useSelector((store) => store.trainerName);
@@ -62,7 +63,7 @@ const Pokedex = () => {
   }
   const {itemsInCurrentPage,lastPage,pagesInCurrentBlock} = paginateData(pokemonsByName,currentPage);
   return (
-    <main className="font-[Inter]">
+    <main id="top" className="font-[Inter]">
       <HeaderPokeball/>
       <section className="px-7 xsm:px-9 md:px-16 2xl:px-[12%] xsm:pt-7 pt-5">
         <p className="font-[Roboto] font-normal pb-3 xsm:pb-4 sm:pb-3 text-base xsm:text-lg">
@@ -95,14 +96,14 @@ const Pokedex = () => {
         {
           currentPage !== 1 && (
             <li className="p-2 text-white font-bold rounded-md bg-red-400">
-          <button onClick={handlePreviusPage}>{"«"}</button>
-        </li>
+              <button onClick={handlePreviusPage}>{"«"}</button>
+            </li>
           )
         }
         {
           pagesInCurrentBlock.map((page)=>(
             <li key={page}>
-              <button onClick={()=>setCurrentPage(page)} className={`p-2 text-white font-bold rounded-md ${currentPage===page ? "bg-red-500" : "bg-red-400"}`}>
+              <button onClick={()=>setCurrentPage(page)} className={`p-2 text-white font-bold rounded-md ${currentPage===page ? "bg-red-500" : "bg-red-400 hover:text-red-500 hover:bg-black/5 transition-colors"}`}>
                 {page}
               </button>
             </li>
@@ -121,23 +122,23 @@ const Pokedex = () => {
         {
           currentPage !== 1 && (
             <li className="p-2 text-white font-bold rounded-md bg-red-400">
-          <button onClick={handlePreviusPage}>{"«"}</button>
-        </li>
+              <Link to="top"><button onClick={handlePreviusPage}>{"«"}</button></Link>
+            </li>
           )
         }
         {
           pagesInCurrentBlock.map((page)=>(
             <li key={page}>
-              <button onClick={()=>setCurrentPage(page)} className={`p-2 text-white font-bold rounded-md ${currentPage===page ? "bg-red-500" : "bg-red-400"}`}>
+              <Link to="top"><button onClick={()=>setCurrentPage(page)} className={`p-2 text-white font-bold rounded-md ${currentPage===page ? "bg-red-500" : "bg-red-400 hover:text-red-500 hover:bg-black/5 transition-colors"}`}>
                 {page}
-              </button>
+              </button></Link>
             </li>
           ))
         }
         {
           currentPage !== lastPage && (
           <li className="p-2 text-white font-bold rounded-md bg-red-400">
-            <button onClick={handleNextPage}>{"»"}</button>
+            <Link to="top"><button onClick={handleNextPage}>{"»"}</button></Link>
           </li>
           )
         }

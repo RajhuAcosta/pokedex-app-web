@@ -14,6 +14,7 @@ function App() {
           <Route path="/pokedex" element={<Pokedex/>} />
           <Route path="/pokedex/:pokemonId" element={<PokemonDetail/>} />
         </Route>
+        <Route path="*" element={<h1>Error 404 Página no encontrada</h1>} />
       </Routes>
     </>
   )
