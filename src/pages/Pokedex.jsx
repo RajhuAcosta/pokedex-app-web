@@ -95,8 +95,8 @@ const Pokedex = () => {
       <ul className="flex justify-center gap-3 pt-2">
         {
           currentPage !== 1 && (
-            <li className="p-2 text-white font-bold rounded-md bg-red-400">
-              <button onClick={handlePreviusPage}>{"«"}</button>
+            <li>
+              <button onClick={handlePreviusPage} className="p-2 text-white font-bold rounded-md bg-red-400 hover:text-red-500 hover:bg-black/5 transition-colors">{"«"}</button>
             </li>
           )
         }
@@ -111,8 +111,8 @@ const Pokedex = () => {
         }
         {
           currentPage !== lastPage && (
-          <li className="p-2 text-white font-bold rounded-md bg-red-400">
-            <button onClick={handleNextPage}>{"»"}</button>
+          <li>
+            <button onClick={handleNextPage} className="p-2 text-white font-bold rounded-md bg-red-400 hover:text-red-500 hover:bg-black/5 transition-colors">{"»"}</button>
           </li>
           )
         }
@@ -121,8 +121,8 @@ const Pokedex = () => {
       <ul className="flex justify-center gap-3 pt-2 pb-10">
         {
           currentPage !== 1 && (
-            <li className="p-2 text-white font-bold rounded-md bg-red-400">
-              <Link to="top"><button onClick={handlePreviusPage}>{"«"}</button></Link>
+            <li>
+              <Link to="top"><button onClick={handlePreviusPage} className="p-2 text-white font-bold rounded-md bg-red-400 hover:text-red-500 hover:bg-black/5 transition-colors">{"«"}</button></Link>
             </li>
           )
         }
@@ -137,8 +137,8 @@ const Pokedex = () => {
         }
         {
           currentPage !== lastPage && (
-          <li className="p-2 text-white font-bold rounded-md bg-red-400">
-            <Link to="top"><button onClick={handleNextPage}>{"»"}</button></Link>
+          <li className=" hover:text-red-500 hover:bg-black/5 transition-colors">
+            <Link to="top"><button onClick={handleNextPage} className="p-2 text-white font-bold rounded-md bg-red-400 hover:text-red-500 hover:bg-black/5 transition-colors">{"»"}</button></Link>
           </li>
           )
         }
