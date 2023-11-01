@@ -122,14 +122,14 @@ const Pokedex = () => {
         {
           currentPage !== 1 && (
             <li>
-              <Link to="top"><button onClick={handlePreviusPage} className="p-2 text-white font-bold rounded-md bg-red-400 hover:text-red-500 hover:bg-black/5 transition-colors">{"«"}</button></Link>
+              <Link to="top" smooth={true} duration={1350}><button onClick={handlePreviusPage} className="p-2 text-white font-bold rounded-md bg-red-400 hover:text-red-500 hover:bg-black/5 transition-colors">{"«"}</button></Link>
             </li>
           )
         }
         {
           pagesInCurrentBlock.map((page)=>(
             <li key={page}>
-              <Link to="top"><button onClick={()=>setCurrentPage(page)} className={`p-2 text-white font-bold rounded-md ${currentPage===page ? "bg-red-500" : "bg-red-400 hover:text-red-500 hover:bg-black/5 transition-colors"}`}>
+              <Link to="top" smooth={true} duration={1350}><button onClick={()=>setCurrentPage(page)} className={`p-2 text-white font-bold rounded-md ${currentPage===page ? "bg-red-500" : "bg-red-400 hover:text-red-500 hover:bg-black/5 transition-colors"}`}>
                 {page}
               </button></Link>
             </li>
@@ -138,7 +138,7 @@ const Pokedex = () => {
         {
           currentPage !== lastPage && (
           <li className=" hover:text-red-500 hover:bg-black/5 transition-colors">
-            <Link to="top"><button onClick={handleNextPage} className="p-2 text-white font-bold rounded-md bg-red-400 hover:text-red-500 hover:bg-black/5 transition-colors">{"»"}</button></Link>
+            <Link to="top" smooth={true} duration={1350}><button onClick={handleNextPage} className="p-2 text-white font-bold rounded-md bg-red-400 hover:text-red-500 hover:bg-black/5 transition-colors">{"»"}</button></Link>
           </li>
           )
         }
