@@ -1,12 +1,12 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom"
+import { Link, useParams } from "react-router-dom"
 import HeaderPokeball from "../components/layouts/HeaderPokeball";
 import { colorByType, colorsByType, bgCardByType } from "../constants/pokemon";
 
 const PokemonDetail = () => {
-  const [pokemon, setPokemon] = useState(null)
-  const [pokemonDetail, setPokemonDetail] = useState(null)
+  const [pokemon, setPokemon] = useState(null);
+  const [pokemonDetail, setPokemonDetail] = useState(null);
   const {pokemonId} = useParams();
   const getPercentStat = (statValue) => {
     const max_stat_value = 255;
@@ -53,7 +53,7 @@ const PokemonDetail = () => {
               </ul>
             </section>
             <section className="mt-2 text- text-black" style={{backgroundClip: "initial"}}>
-              <p className="font-medium text-lg font-[Roboto]">{pokemonDetail?.genera[7].genus}</p>
+              <p className="font-medium text-lg font-[Roboto]"><Link to={`/pokedex/pokeCard/${pokemonId}`}>{pokemonDetail?.genera[7].genus}</Link></p>
               <p className="font-normal font-[Inter] px-3 text-base mt-1" style={{textTransform: "none"}}>{pokemonDetail?.flavor_text_entries[11].flavor_text}</p>
             </section>
             <section className="grid lg:flex lg:gap-10 justify-center gap-3 mt-3">
